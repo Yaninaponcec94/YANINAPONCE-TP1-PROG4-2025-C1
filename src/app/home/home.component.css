@@ -1,0 +1,77 @@
+.juegos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 5rem;
+  justify-items: center;
+}
+
+.juego-card {
+  border: 3px solid white;
+  width: 300px;
+  height: 200px;
+  border-radius: 15px;
+  background-size:  300px x 200px;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.8rem;
+}
+
+/* Overlay oculto por defecto */
+.juego-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+/* Mostrar overlay al hacer hover */
+.juego-card:hover .juego-overlay {
+  opacity: 1;
+}
+
+/* Colores hover personalizados */
+.juego-card.celeste:hover .juego-overlay {
+  background-color: #00ffff;
+  color: white;
+}
+
+.juego-card.verde:hover .juego-overlay {
+  background-color: #00ff00;
+  color: white;
+}
+
+.juego-card.violeta:hover .juego-overlay {
+  background-color: #BF00FF;
+  color: white;
+}
+
+.juego-card.rosa:hover .juego-overlay {
+  background-color: #ff69b4;
+  color: white;
+}
+
+.jugar-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: black;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

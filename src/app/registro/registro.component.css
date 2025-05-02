@@ -1,0 +1,65 @@
+/* Fondo oscuro centrado */
+.registro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000; /* fondo negro */
+    color: white; /* texto blanco */
+}
+
+/* Formulario con borde redondeado */
+.registro-form {
+    background-color: #111; /* gris muy oscuro */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.4); /* sombra rosa suave */
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Títulos */
+.registro-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ff66cc; /* rosa fuerte */
+}
+
+/* Etiquetas */
+.registro-form label {
+    display: block;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+/* Inputs */
+.registro-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #222;
+    border: 1px solid #ff66cc;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+}
+
+/* Botón */
+.registro-form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 25px;
+    background-color: #ff66cc;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover efecto del botón */
+.registro-form button:hover {
+    background-color: #ff1493; /* rosa más intenso */
+}

@@ -1,0 +1,65 @@
+/* Fondo oscuro centrado */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000; /* fondo negro */
+    color: white; /* texto blanco */
+  }
+  
+  /* Formulario con borde redondeado */
+  .login-form {
+    background-color: #111; /* gris muy oscuro */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Títulos */
+  .login-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #00ffff; /* cian */
+  }
+  
+  /* Etiquetas */
+  .login-form label {
+    display: block;
+    margin-top: 15px;
+    font-size: 16px;
+  }
+  
+  /* Inputs */
+  .login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #222;
+    border: 1px solid #00ffff;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+  }
+  
+  /* Botón */
+  .login-form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 25px;
+    background-color: #00ffff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .login-form button:hover {
+    background-color: #00dddd;
+  }
+  

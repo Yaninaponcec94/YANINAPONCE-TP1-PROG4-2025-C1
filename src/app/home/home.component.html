@@ -1,0 +1,17 @@
+<section class="juegos-grid">
+  <div 
+    class="juego-card" 
+    *ngFor="let juego of juegos" 
+    [ngClass]="juego.colorHover"
+    [style.backgroundImage]="'url(' + juego.imagen + ')'"
+  >
+    <div class="juego-overlay">
+      <h2 class="juego-nombre">{{ juego.nombre }}</h2>
+      <button class="jugar-btn">Jugar YA!</button>
+    </div>
+  </div>
+</section>
+
+
+
+  

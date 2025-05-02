@@ -1,0 +1,11 @@
+<div *ngIf="userData">
+    <h2>{{ userData.name }}</h2>
+    <img [src]="userData?.avatar_url" alt="Avatar" width="150" />
+
+
+    <p><strong>Usuario:</strong> {{userData.login}}</p>
+    <p><strong>Bio:</strong> {{userData.bio || 'sin bio disponible'}}</p>
+    <p><strong>Ubicacion:</strong> {{userData.location || 'locacion no encontrada'}}</p>
+                
+
+</div>

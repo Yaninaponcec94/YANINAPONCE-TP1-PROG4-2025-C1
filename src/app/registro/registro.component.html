@@ -1,0 +1,42 @@
+<div class="registro-container">
+    <form [formGroup]="registroForm" (ngSubmit)="registrar()" class="registro-form">
+      <h2>Registro</h2>
+  
+      <div>
+        <label>Nombre de usuario:</label>
+        <input type="text" formControlName="nombre_usuario">
+        <div *ngIf="registroForm.get('nombre_usuario')?.touched && registroForm.get('nombre_usuario')?.invalid">
+          <small style="color: red;">El nombre de usuario es obligatorio</small>
+        </div>
+      </div>
+      
+      <div>
+        <label>Email:</label>
+        <input type="email" formControlName="email">
+        <div *ngIf="registroForm.get('email')?.touched && registroForm.get('email')?.invalid">
+          <small *ngIf="registroForm.get('email')?.errors?.['required']" style="color: red;">El email es obligatorio</small>
+          <small *ngIf="registroForm.get('email')?.errors?.['email']" style="color: red;">El formato del email no es válido</small>
+        </div>
+      </div>
+      
+      <div>
+        <label>Contraseña:</label>
+        <input type="password" formControlName="password">
+        <div *ngIf="registroForm.get('password')?.touched && registroForm.get('password')?.invalid">
+          <small *ngIf="registroForm.get('password')?.errors?.['required']" style="color: red;">La contraseña es obligatoria</small>
+          <small *ngIf="registroForm.get('password')?.errors?.['minlength']" style="color: red;">La contraseña debe tener al menos 6 caracteres</small>
+        </div>
+      </div>
+      
+      <div>
+        <label>Confirmar contraseña:</label>
+        <input type="password" formControlName="confirmPassword">
+        <div *ngIf="registroForm.hasError('noCoinciden') && registroForm.get('confirmPassword')?.touched">
+          <small style="color: red;">Las contraseñas no coinciden</small>
+        </div>
+      </div>
+      
+      <button type="submit">Registrarse</button>
+    </form>
+  </div>
+  
