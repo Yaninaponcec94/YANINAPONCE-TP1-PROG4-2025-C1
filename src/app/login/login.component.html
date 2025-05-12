@@ -2,12 +2,13 @@
   <div class="login-form">
     <h2>Iniciar Sesión</h2>
     <form (submit)="onSubmit($event)">
-      <label>Usuario</label>
-      <input type="text" #usuario />
+      <label>Email</label>
+      <input type="email" #email />
+
       <label>Contraseña</label>
       <input type="password" #password />
       <div class="botones">
-        <button type="button" (click)="autocompletar()">Autocompletar</button>
+        
         <button type="submit">Ingresar</button>
       </div>
     </form>

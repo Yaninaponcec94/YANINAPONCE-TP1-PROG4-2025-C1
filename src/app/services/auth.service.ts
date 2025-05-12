@@ -1,41 +1,76 @@
-
 import { Injectable } from '@angular/core';
-import { supabase } from '../supabase.client';
+import { supabase } from '../supabase.client'; 
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
+  constructor() {}
+
+  // REGISTRO
   async registrar(nombre_usuario: string, email: string, password: string) {
-    const { data, error } = await supabase
-      .from('usuario')
-      .insert([{ nombre_usuario, email, password }]);
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+    });
 
     if (error) {
       throw error;
     }
-    
-    return data;
-  }
 
-  async login(nombre_usuario: string, password: string){
-    // Atajo para testeo
-  if (nombre_usuario === 'usuario123' && password === 'clave123') {
-    return { nombre_usuario: 'usuario123', email: 'falso@correo.com' };
-  }
+    // Después del registro, insertamos en nuestra tabla `usuario`
+    const insertResult = await supabase.from('usuario').insert([
+      {
+        id: data.user?.id,
+        nombre_usuario,
+        email,
+        password,
+        created_at: new Date(),
+      },
+    ]);
 
-    //supabase
-    const { data, error } = await supabase
-    .from('usuario')
-    .select('*')
-    .eq('nombre_usuario', nombre_usuario)
-    .eq('password', password)
-    .single();
-
-    if(error || !data){
-      throw new Error('usuario o contraseña incorrectos');
+    if (insertResult.error) {
+      throw insertResult.error;
     }
 
-    return data;
+    return insertResult.data;
+  }
+
+  // LOGIN
+async login(email: string, password: string) {
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
+
+  if (error || !data.user) {
+    throw new Error('Usuario o contraseña incorrectos');
+  }
+
+  return data.user;
+}
+
+
+  // OBTENER SESIÓN ACTUAL
+  async obtenerUsuarioActual() {
+    const {
+      data: { session },
+      error,
+    } = await supabase.auth.getSession();
+
+    if (error || !session) {
+      return null;
+    }
+
+    return session.user;
+  }
+
+  // CERRAR SESIÓN
+  async logout() {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      throw error;
+    }
   }
 }
+

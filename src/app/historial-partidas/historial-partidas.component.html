@@ -1,0 +1,20 @@
+<h2>Historial de Partidas</h2>
+<ul *ngIf="partidas.length > 0; else sinPartidas" class="lista-historial">
+  <li *ngFor="let partida of partidas">
+    <strong>Palabra:</strong> {{ partida.palabra }} |
+    <strong>Letras:</strong> {{ partida.letras_adivinadas }} |
+    <strong>Resultado:</strong> {{ partida.resultado }} |
+    <strong>Fecha:</strong> {{ partida.fecha | date:'short' }}
+  </li>
+</ul>
+
+<ng-template #sinPartidas>
+  <p class="mensaje-vacio">No hay partidas registradas aún.</p>
+</ng-template>
+
+<div class="historial-botones">
+  <button routerLink="/home">Ir al Inicio</button>
+  <button (click)="volverAJugar()">Volver a Jugar</button>
+</div>
+
+

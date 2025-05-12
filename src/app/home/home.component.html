@@ -7,7 +7,8 @@
   >
     <div class="juego-overlay">
       <h2 class="juego-nombre">{{ juego.nombre }}</h2>
-      <button class="jugar-btn">Jugar YA!</button>
+      <button class="jugar-btn" (click)="jugar(juego.nombre)">Jugar YA!</button>
+
     </div>
   </div>
 </section>

@@ -1,4 +1,4 @@
-<header class="header" *ngIf="!isLoginRegistroPage()">
+<header class="header" *ngIf="!isPaginaSinLayout()"> 
   <nav class="navbar">
     <div class="navbar-center">
       <a routerLink="/home" href="/home">Home</a>
@@ -13,8 +13,7 @@
   </nav>
 </header>
 
-<main *ngIf="!isLoginRegistroPage() && !isQuienSoyPage()" class="main">
-  <div class="bienvenida-container">
+<main *ngIf="!isPaginaSinLayout() && !isQuienSoyPage()" class="main">  <div class="bienvenida-container">
     <h1 class="neon-text">Bienvenidos a la {{ title }}</h1>
   </div>
 </main>
@@ -22,6 +21,6 @@
 
 <router-outlet></router-outlet>
 
-<footer class="footer" *ngIf="!isLoginRegistroPage()">
-  <p>© 2025 Mi sitio de juegos</p>
+<footer class="footer" *ngIf="!isPaginaSinLayout()"> 
+   <p>© 2025 Mi sitio de juegos</p>
 </footer>

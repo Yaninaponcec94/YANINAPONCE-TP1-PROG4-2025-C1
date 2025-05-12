@@ -18,10 +18,35 @@ export class HomeComponent {
   title = 'Mi Sala de Juegos';
 
   juegos = [
-    { nombre: 'Ahorcado', colorHover: 'celeste', imagen: 'assets/img/ahorcado00.gif'},
-    { nombre: 'Mayor o menor',  colorHover: 'verde', imagen: 'assets/img/mom.jpg'},
-    { nombre: 'Preguntados', colorHover: 'violeta', imagen: 'assets/img/preg1.jpg'},
-    { nombre: 'Juego propio',  colorHover: 'rosa', imagen: 'assets/img/preg2.png'}
+    { nombre: 'Ahorcado', colorHover: 'celeste', imagen: 'assets/img/ahorcado00.gif', ruta:'/ahorcado'},
+    { nombre: 'Mayor o menor',  colorHover: 'verde', imagen: 'assets/img/mom.jpg', ruta:'mayor-menor'},
+    { nombre: 'Preguntados', colorHover: 'violeta', imagen: 'assets/img/preg1.jpg', ruta:''},
+    { nombre: 'Juego propio',  colorHover: 'rosa', imagen: 'assets/img/preg2.png', ruta:''}
   ];
   
+  jugar(juegoNombre:string){
+    const estaLogueado=localStorage.getItem('logueado')==='true';
+
+    if(estaLogueado){
+      switch(juegoNombre){
+        case 'Ahorcado':
+          this.router.navigate(['/ahorcado']);
+          break;
+        case 'Mayor o menor':
+          this.router.navigate(['/mayor-menor']);
+          break;
+        case 'Preguntados':
+          this.router.navigate(['/preguntados']);
+          break;
+          case 'Juego propio':
+          this.router.navigate(['/juego-propio']);
+          break;
+          default:
+            alert('juego no disponible');
+      }
+    } else{
+      alert('debes iniciar sesion para jugar');
+      this.router.navigate(['/login']);
+    }
+  }
 }

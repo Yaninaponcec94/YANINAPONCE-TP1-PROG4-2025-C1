@@ -1,0 +1,43 @@
+<div class="ahorcado-container">
+   <div class="header">
+     <a routerLink="/home" class="btn-home" title="Volver al inicio">🏠</a>
+     
+   </div>
+   <h2>{{ juegoNombre }}</h2>
+      <!-- Imagen del ahorcado -->
+    <div class="imagen-ahorcado">
+       <img [src]="imagenAhorcado" alt="Ahorcado">
+    </div>
+
+    <!-- letras adivinadas -->
+     <div class="letras-adivinadas">
+        <span *ngFor="let letra of letrasAdivinadas">
+            {{letra ===null ?'-':letra }}
+        </span>
+     </div>
+
+     <!--intentos restantes-->
+     <div class="intentos-restantes">
+        <p>Intentos restantes: {{ intentosRestantes }} </p>
+     </div>
+
+     <!--letras disponibles(botones)-->
+     <div class="letras-disponibles">
+        <button *ngFor="let letra of alfabeto"
+        [disabled]="letrasAdivinadas.includes(letra) || intentosRestantes === 0"
+        (click)="adivinarLetra(letra)">
+        {{ letra }}
+        </button>
+     </div>
+
+     <div *ngIf="gameOver" class="game-over" 
+     [ngClass]="{ 'ganaste': mensajeFinJuego.includes('FELICIDADES'), 'perdiste': mensajeFinJuego.includes('Lo siento') }">
+      <p class="mensaje-final">{{ mensajeFinJuego }}</p>
+      <button (click)="reiniciarJuego()">Jugar nuevamente</button>
+    </div>
+    
+    <button routerLink="/historial">Ver mi historial de partidas</button>
+    
+
+
+</div>

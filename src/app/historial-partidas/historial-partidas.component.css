@@ -1,0 +1,65 @@
+/* Fondo general negro */
+:host {
+    display: block;
+    background-image: none !important;
+    background-color: black !important;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+body, .lista-historial {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  /* Título */
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  
+  /* Lista de partidas */
+  .lista-historial {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .lista-historial li {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+  }
+  
+  /* Mensaje si no hay partidas */
+  .mensaje-vacio {
+    font-size: 1.2rem;
+    color: #ccc;
+    padding: 10px;
+  }
+  
+  .historial-botones {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .historial-botones button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .historial-botones button:hover {
+    background-color: #1976d2;
+  }
+  
