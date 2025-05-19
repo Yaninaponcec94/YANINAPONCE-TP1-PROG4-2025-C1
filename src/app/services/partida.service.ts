@@ -7,6 +7,7 @@ import { supabase } from "../supabase.client";
 })
 
 export class PartidaService{
+  
   async guardarPartida(
     user_id: string,
     palabra: string,
@@ -56,5 +57,7 @@ export class PartidaService{
       
         return data;
       }
+      
+
       
 }

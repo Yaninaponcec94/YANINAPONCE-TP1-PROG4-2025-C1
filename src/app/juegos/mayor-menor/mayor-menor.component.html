@@ -1,0 +1,74 @@
+<!-- Contenedor general de todo el layout: juego + tablero -->
+<div class="layout-container">
+  
+  <!-- Contenedor del juego -->
+  <div class="juego-container">
+    <a routerLink="/home" class="home-icon">🏠</a>
+
+    <div class="puntaje">
+      Puntaje: {{ puntaje }}
+    </div>
+
+
+    <p>---------------------------------------------------------------------------------------------------------------</p>
+
+    <div class="cartas-container">
+      <div class="carta-box">
+        <img *ngIf="cartaActual" [src]="cartaActual.imagen" alt="Carta actual" class="carta" />
+      </div>
+
+      <span class="versus">VS</span>
+
+      <div class="carta-box">
+        <img *ngIf="cartaSiguiente" [src]="cartaSiguiente.imagen" alt="Carta siguiente" class="carta" />
+      </div>
+    </div>
+
+    <p>---------------------------------------------------------------------------------------------------------------</p>
+
+    <div class="botones">
+      <button (click)="jugar('mayor')" [disabled]="juegoTerminado">Mayor</button>
+      <button (click)="jugar('igual')" [disabled]="juegoTerminado">Igual</button>
+      <button (click)="jugar('menor')" [disabled]="juegoTerminado">Menor</button>
+    </div>
+
+    <div *ngIf="mensaje" class="mensaje">
+      {{ mensaje }}
+    </div>
+
+    <div *ngIf="juegoTerminado" class="volver-jugar">
+      <button (click)="reiniciarJuego()">Volver a jugar</button>
+    </div>
+  </div>
+
+  <!-- TABLERO a la derecha -->
+  <div class="tablero">
+    <h3>Historial de partidas</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Puntaje</th>
+          <th>Resultado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let partida of partidas">
+          <td>{{ partida.puntaje }}</td>
+          <td>{{ partida.resultado }}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+<!-- Cartel de GANASTE -->
+<div class="modal-ganaste" *ngIf="mostrarGanaste">
+  <div class="modal-contenido">
+    <span class="cerrar" (click)="cerrarModalGanaste()">×</span>
+    <h1>🎉 ¡GANASTE! 🎉 </h1>
+    <h2> lograste más de 10 aciertos seguidos! </h2>
+    <canvas id="confetti-canvas"></canvas>
+  </div>
+</div>
+

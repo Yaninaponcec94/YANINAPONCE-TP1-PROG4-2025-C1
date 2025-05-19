@@ -1,0 +1,281 @@
+/* Estilo general del body */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #e1b8ff;
+}
+
+/* CONTENEDOR GENERAL: juego + tablero */
+.layout-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  margin-top: 4cm; 
+}
+
+/* Contenedor del juego */
+.juego-container {
+  flex: 3;
+  max-width: 800px;
+  padding: 2rem;
+  background-color: #1c1c1c;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(186, 104, 200, 0.4);
+  position: relative;
+}
+
+/* Ícono home */
+.home-icon {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #d1a3ff;
+  transition: transform 0.2s ease;
+}
+
+.home-icon:hover {
+  transform: scale(1.15);
+}
+
+/* Puntaje */
+.puntaje {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #e0bbff;
+}
+
+/* Cartas y VS */
+.cartas-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Contenedor de cada carta */
+.carta-box {
+  width: 130px;
+  height: 190px;
+  background-color: #2d2d2d;
+  border-radius: 14px;
+  box-shadow: 0 0 15px rgba(186, 104, 200, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Imagen de carta */
+.carta {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
+}
+
+/* Texto "VS" */
+.versus {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #cc99ff;
+  user-select: none;
+}
+
+/* Botones */
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.botones button {
+  background-color: #8e44ad;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(142, 68, 173, 0.5);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.botones button:hover {
+  background-color: #a569bd;
+  transform: translateY(-2px);
+}
+
+/* Mensaje final */
+.mensaje {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #e1b8ff;
+  font-weight: bold;
+}
+
+/* Botón volver a jugar */
+.volver-jugar {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.volver-jugar button {
+  background-color: #9b59b6;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(155, 89, 182, 0.6);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.volver-jugar button:hover {
+  background-color: #b97edb;
+  transform: scale(1.05);
+}
+
+/* Línea separadora (usás <p>) */
+p {
+  color: #cc99ff;
+}
+
+/* Estilos del tablero */
+.tablero {
+  flex: 1;
+  background-color: #2a2a2a;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(186, 104, 200, 0.3);
+  font-size: 0.85rem;
+  max-width: 250px;
+  max-height: 500px; 
+  overflow-y: auto;
+}
+
+.tablero h3 {
+  text-align: center;
+  color: #d7aaff;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.tablero table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tablero th,
+.tablero td {
+  padding: 0.4rem;
+  text-align: center;
+  border-bottom: 1px solid #444;
+  color: #e1b8ff;
+}
+
+.tablero th {
+  color: #cc99ff;
+}
+/* Scroll personalizado */
+.tablero::-webkit-scrollbar {
+  width: 8px;
+}
+
+.tablero::-webkit-scrollbar-thumb {
+  background-color: #a66bbe;
+  border-radius: 6px;
+}
+
+.tablero::-webkit-scrollbar-track {
+  background-color: #1f1f1f;
+}
+
+.modal-ganaste {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* Lo fija en el centro de la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+  z-index: 9999; /* Para asegurarse de que el modal esté por encima de otros contenidos */
+}
+
+.modal-contenido {
+  background-color: #2d2d2d;
+  color: #e1b8ff;
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+  max-width: 600px;
+  width: 80%; /* Ajusta el tamaño */
+  animation: aparecer 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* Auto-ajusta el alto */
+}
+
+/* Estilo del título principal */
+.modal-contenido h1 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+  color: #e1b8ff;
+}
+
+/* Estilo del mensaje secundario */
+.modal-contenido h2 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  color: #e1b8ff;
+}
+
+/* Estilo para el icono de cerrar */
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ff0;
+  z-index: 10;
+}
+
+/* Animación de aparición */
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Canvas de confeti */
+#confetti-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Asegura que el confeti esté detrás del contenido */
+}

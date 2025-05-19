@@ -35,7 +35,7 @@ export class HistorialPartidasComponent implements OnInit {
     }
   }
   volverAJugar() {
-    // Cambiá esta ruta por la que corresponda si es otro juego
+
     this.router.navigate(['/ahorcado']);
 }
 }

@@ -1,15 +1,17 @@
 .juegos-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  padding: 5rem;
-  justify-items: center;
+  grid-auto-flow: column; /* hace que los elementos fluyan en columnas (fila única) */
+  justify-content: center; /* centra todo el grid */
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  overflow-x: auto; /* scroll horizontal si no entra */
 }
 
+
 .juego-card {
-  border: 3px solid white;
-  width: 300px;
-  height: 200px;
+  border: 3px solid rgb(253, 163, 190);
+  width: 380px;
+  height: 270px;
   border-radius: 15px;
   background-size:  300px x 200px;
   background-position: center;
@@ -44,12 +46,12 @@
 
 /* Colores hover personalizados */
 .juego-card.celeste:hover .juego-overlay {
-  background-color: #00ffff;
+  background-color: #883688;
   color: white;
 }
 
 .juego-card.verde:hover .juego-overlay {
-  background-color: #00ff00;
+  background-color: #e4439c;
   color: white;
 }
 
@@ -59,7 +61,7 @@
 }
 
 .juego-card.rosa:hover .juego-overlay {
-  background-color: #ff69b4;
+  background-color: #75043d;
   color: white;
 }
 

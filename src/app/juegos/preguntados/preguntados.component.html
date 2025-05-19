@@ -1,0 +1,34 @@
+<div class="main-container">
+ 
+  <section class="juego-section" *ngIf="!juegoTerminado; else finJuego">
+      <a routerLink="/home" class="btn-home" title="Volver al inicio">🏠</a>
+
+ 
+        <ng-container *ngIf="preguntas && preguntas[preguntaActualIndex]">
+  <p class="categoria">Categoría: {{ preguntas[preguntaActualIndex].categoria.nombre }}</p>
+  <h2 class="pregunta">{{ preguntas[preguntaActualIndex].pregunta }}</h2>
+
+  <div class="opciones">
+    <button *ngFor="let opcion of preguntas[preguntaActualIndex].opciones" 
+            (click)="responder(opcion)" class="opcion-btn">
+      {{ opcion }}
+    </button>
+  </div>
+</ng-container>
+
+  </section>
+
+  <aside class="tablero">
+    <h3>Tablero</h3>
+    <p>Puntaje: {{ puntaje }}</p>
+    <p>Pregunta: {{ preguntaActualIndex + 1 }} / {{ preguntas.length }}</p>
+  </aside>
+</div>
+
+<ng-template #finJuego>
+  <div class="juego-terminado">
+    <h2>Juego terminado!</h2>
+    <p>Tu puntaje final es: {{ puntaje }}</p>
+    <button (click)="reiniciar()">Jugar otra vez</button>
+  </div>
+</ng-template>

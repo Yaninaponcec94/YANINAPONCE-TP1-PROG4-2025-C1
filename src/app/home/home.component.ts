@@ -20,8 +20,8 @@ export class HomeComponent {
   juegos = [
     { nombre: 'Ahorcado', colorHover: 'celeste', imagen: 'assets/img/ahorcado00.gif', ruta:'/ahorcado'},
     { nombre: 'Mayor o menor',  colorHover: 'verde', imagen: 'assets/img/mom.jpg', ruta:'mayor-menor'},
-    { nombre: 'Preguntados', colorHover: 'violeta', imagen: 'assets/img/preg1.jpg', ruta:''},
-    { nombre: 'Juego propio',  colorHover: 'rosa', imagen: 'assets/img/preg2.png', ruta:''}
+    { nombre: 'Preguntados', colorHover: 'violeta', imagen: 'assets/img/preg1.jpg', ruta:'/preguntados'},
+    { nombre: 'Colores Prohibidos',  colorHover: 'rosa', imagen: 'assets/img/juego-cp.jpg', ruta:'/colores-prohibidos'}
   ];
   
   jugar(juegoNombre:string){
@@ -38,8 +38,8 @@ export class HomeComponent {
         case 'Preguntados':
           this.router.navigate(['/preguntados']);
           break;
-          case 'Juego propio':
-          this.router.navigate(['/juego-propio']);
+          case 'Colores Prohibidos':
+          this.router.navigate(['/colores-prohibidos']);
           break;
           default:
             alert('juego no disponible');

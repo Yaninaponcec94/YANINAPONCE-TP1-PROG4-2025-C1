@@ -1,13 +1,17 @@
 <header class="header" *ngIf="!isPaginaSinLayout()"> 
   <nav class="navbar">
+    <div class="navbar-left">
+      𝕸𝖎 𝕵𝖚𝖊𝖌𝖔
+    </div>
     <div class="navbar-center">
-      <a routerLink="/home" href="/home">Home</a>
-      <a routerLink="/registro" href="/registro">Registro</a>
-      <a routerLink="/quien-soy" href="/quien-soy">Quien soy</a>
+      
+      <a routerLink="/home" href="/home">ℍ𝕆𝕄𝔼</a>
+      <a routerLink="/registro" href="/registro">ℝ𝔼𝔾𝕀𝕊𝕋ℝ𝕆</a>
+      <a routerLink="/quien-soy" href="/quien-soy">ℚ𝕌𝕀𝔼ℕ 𝕊𝕆𝕐</a>
     </div>
     <div class="navbar-right">
       <button (click)="onLoginClick()" class="btn-login">
-        {{ estaLogueado ? 'Cerrar Sesión' : 'Iniciar Sesión' }}
+        {{ estaLogueado ? '𝒞𝑒𝓇𝓇𝒶𝓇 𝓈𝑒𝓈𝒾𝑜𝓃' : '𝐼𝓃𝒾𝒸𝒾𝒶𝓇 𝓈𝑒𝓈𝒾𝑜𝓃' }}
       </button>
     </div>
   </nav>
@@ -17,10 +21,14 @@
     <h1 class="neon-text">Bienvenidos a la {{ title }}</h1>
   </div>
 </main>
-
-
 <router-outlet></router-outlet>
 
+<app-chat-button
+  *ngIf="router.url === '/home'"
+  [mensajes]="mensajes" (enviar)="agregarMensaje($event)">
+</app-chat-button>
+
+
 <footer class="footer" *ngIf="!isPaginaSinLayout()"> 
-   <p>© 2025 Mi sitio de juegos</p>
+   <p>© 𝟚𝟘𝟚𝟝 𝕄𝕚 𝕤𝕚𝕥𝕚𝕠 𝕕𝕖 𝕛𝕦𝕖𝕘𝕠𝕤</p>
 </footer>

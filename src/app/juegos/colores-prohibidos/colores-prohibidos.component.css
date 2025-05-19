@@ -1,0 +1,171 @@
+.layout-container {
+  display: flex;
+  justify-content: center;   /* ya lo tenés, centra horizontal */
+  align-items: center;       /* cambia de flex-start a center para centrar vertical */
+  gap: 2rem;
+  padding: 2rem;
+  color: #e1b8ff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  height: 100vh;             /* ocupa toda la altura de la ventana para que el centrado vertical funcione */
+}
+
+
+/* Contenedor del juego */
+.juego-container {
+  flex: 3;
+  max-width: 600px;
+  padding: 2rem;
+  background-color: #1c1c1c;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(186, 104, 200, 0.4);
+  position: relative;
+}
+
+/* Ícono home */
+.home-icon {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #d1a3ff;
+  transition: transform 0.2s ease;
+}
+
+.home-icon:hover {
+  transform: scale(1.15);
+}
+
+/* Puntaje */
+.puntaje {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #e0bbff;
+}
+
+/* Botones de colores */
+.colores-disponibles {
+  display: grid;
+  grid-template-columns: repeat(4, 0.2fr); /* 4 columnas iguales */
+  gap: 0.2rem; /* espacio entre botones */
+  row-gap: 0.5rem;
+}
+
+.colores-disponibles button {
+  width: 90px;
+  height: 90px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(142, 68, 173, 0.5);
+  font-weight: bold;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.colores-disponibles button:hover:not(:disabled) {
+  background-color: #a569bd;
+  transform: translateY(-2px);
+}
+
+.colores-disponibles button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Mensaje final */
+.mensaje {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #e1b8ff;
+  font-weight: bold;
+}
+
+/* Botón volver a jugar */
+.volver-jugar {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.volver-jugar button {
+  background-color: #9b59b6;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(155, 89, 182, 0.6);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.volver-jugar button:hover {
+  background-color: #b97edb;
+  transform: scale(1.05);
+}
+
+/* Estilos del tablero */
+.tablero {
+  flex: 1;
+  background-color: #2a2a2a;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(186, 104, 200, 0.3);
+  font-size: 0.9rem;
+  max-width: 250px;
+  max-height: 500px; 
+  overflow-y: auto;
+}
+
+.tablero h3 {
+  text-align: center;
+  color: #d7aaff;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.tablero table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tablero th,
+.tablero td {
+  padding: 0.4rem;
+  text-align: center;
+  border-bottom: 1px solid #444;
+  color: #e1b8ff;
+}
+
+.tablero th {
+  color: #cc99ff;
+}
+
+/* Scroll personalizado */
+.tablero::-webkit-scrollbar {
+  width: 8px;
+}
+
+.tablero::-webkit-scrollbar-thumb {
+  background-color: #a66bbe;
+  border-radius: 6px;
+}
+
+.tablero::-webkit-scrollbar-track {
+  background-color: #1f1f1f;
+}
+.tiempo-restante {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.pista {
+  margin-bottom: 16px;
+  font-size: 1.1em;
+}

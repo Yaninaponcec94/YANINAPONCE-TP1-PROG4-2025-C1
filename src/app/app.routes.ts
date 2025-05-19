@@ -7,6 +7,7 @@ import { HistorialPartidasComponent } from './historial-partidas/historial-parti
 
 
 
+
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' }, // IMPORTANTE Y NECESARIO
   { path: 'home', component: HomeComponent},
@@ -16,17 +17,19 @@ export const routes: Routes = [
 
   {
     path:'ahorcado',
-    loadComponent:() => import('./juegos/ahorcado.component').then(m => m.AhorcadoComponent)  
+    loadComponent:() => import('./juegos/ahorcado/ahorcado.component').then(m => m.AhorcadoComponent)  
   },
   { path: 'historial', component: HistorialPartidasComponent }, 
   {
     path:'mayor-menor',
-    loadComponent:() => import('./juegos/mayor-menor.component').then(m => m.MayorMenorComponent)
+    loadComponent:() => import('./juegos/mayor-menor/mayor-menor.component').then(m => m.MayorMenorComponent)
   },
-
-
-  { path: '**', redirectTo: 'home' }
-
-
+  { path: 'preguntados', 
+    loadComponent:() => import('./juegos/preguntados/preguntados.component').then(m => m.PreguntadosComponent)
+   },
+  { path: 'colores-prohibidos', 
+    loadComponent:() => import('./juegos/colores-prohibidos/colores-prohibidos.component').then(m => m.ColoresProhibidosComponent)
+   },
   
+  { path: '**', redirectTo: 'home' }  
 ];

@@ -1,0 +1,31 @@
+<div class="chat-container" [class.abierto]="abierto" (click)="toggleChat($event)">
+  <div class="chat-icon" *ngIf="!abierto">💬</div>
+
+  <div class="chat-window" *ngIf="abierto" (click)="$event.stopPropagation()">
+    <div class="chat-header">
+      Chat
+      <button class="cerrar" (click)="toggleChat($event)">✖</button>
+    </div>
+
+    <div class="chat-body">
+      <div class="chat-mensajes" #scrollContainer #contenedorMensajes>
+        <div *ngFor="let msg of mensajes" class="mensaje" [ngClass]="msg.propio ? 'propio' : 'ajeno'">
+          <p>{{ msg.mensajes }}</p>
+          <small>{{ msg.fecha_envio }}</small>
+        </div>
+      </div>
+    
+      <div class="chat-footer">
+        <input 
+          type="text" 
+          placeholder="Escribí un mensaje..." 
+          [(ngModel)]="nuevoMensaje" 
+          (keyup.enter)="enviarMensaje()" 
+        />
+        <button type="button" (click)="enviarMensaje()">Enviar</button> <!-- 👈 tipo botón -->
+      </div>
+
+    </div>
+  </div>
+
+</div>

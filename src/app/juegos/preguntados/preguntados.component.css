@@ -1,0 +1,130 @@
+:host {
+  display: flex;
+  height: 100vh;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contenedor principal que aloja juego y tablero */
+.main-container {
+  margin: auto; /* centra el contenido */
+  display: flex;
+  width: 90%;
+  max-width: 900px;
+  height: 70vh;
+  background: rgba(255, 255, 255, 0.1); /* fondo semi-transparente para resaltar */
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+/* Contenedor de preguntas a la izquierda */
+.juego-section {
+  flex: 3;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.btn-home {
+  display: block;
+  margin: 3px 0;
+  
+  font-size: 40px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  
+  color: white;
+  transition: background-color 0.2s ease;
+}
+.opcion-btn:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Categoría */
+.categoria {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #d1c4e9;
+}
+
+/* Pregunta */
+.pregunta {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  color: #ede7f6;
+}
+
+/* Botones de opciones */
+.opciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.opcion-btn {
+  background-color: #7e57c2;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  flex: 1 1 45%;
+  transition: background-color 0.3s ease;
+}
+
+.opcion-btn:hover {
+  background-color: #9575cd;
+}
+
+/* Tablero lateral derecho */
+.tablero {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 20px 25px;
+  border-left: 2px solid #d1c4e9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tablero h3 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #ede7f6;
+}
+
+.tablero p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* Estado juego terminado */
+.juego-terminado {
+  text-align: center;
+}
+
+.juego-terminado h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #f3e5f5;
+}
+
+.juego-terminado button {
+  background-color: #7e57c2;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.juego-terminado button:hover {
+  background-color: #9575cd;
+}

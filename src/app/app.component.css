@@ -1,17 +1,26 @@
-/* Estilo de la navbar (Menú fijo) */
 .navbar {
-  position: fixed; /* Fija el menú en la parte superior */
+  position: fixed;
   top: 0;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: center; /* sigue centrando los links */
   align-items: center;
   padding: 20px 50px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
   color: #fff;
-  z-index: 1000; 
+  z-index: 1000;
   pointer-events: auto;
+}
+
+/* Este va fijo a la izquierda */
+.navbar-left {
+  position: absolute;
+  left: 50px; /* ajustá si querés más o menos margen */
+  font-family: 'Courier New', monospace;
+  font-size: 2.2rem;
+  color: #d9b3ff;
+  pointer-events: none; /* opcional, si no querés que se pueda seleccionar/clicar */
 }
 
 /* Centro de la barra */
@@ -30,7 +39,7 @@
 .navbar-center a {
   color: white;
   text-decoration: none;
-  font-size: 21px;
+  font-size: 23px;
   position: relative;
   padding-bottom: 5px;
   transition: color 0.3s ease-in-out;
@@ -38,9 +47,9 @@
 
 /* Efecto hover en los links */
 .navbar-center a:hover {
-  color: #00ffff; /* Cambia el color del texto */
+  color: #c307d4; /* Cambia el color del texto */
   font-size: 24px; /* Aumenta el tamaño de la letra */
-  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; /* Agrega sombra al texto */
+  text-shadow: 0 0 10px #d63cce, 0 0 20px #81208a; /* Agrega sombra al texto */
 }
 
 /* Línea debajo del enlace */
@@ -51,7 +60,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #00ffff;
+  background-color: #81208a;
   transform: scaleX(0);
   transition: transform 0.3s ease-in-out;
 }
@@ -74,7 +83,7 @@
 }
 
 .btn-login:hover {
-  background-color: #00ffff;
+  background-color: #81208a;
   color: #111;
 }
 
@@ -86,45 +95,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 2rem; /* aquí bajamos el contenido */
+  padding-top: 1rem; /* aquí bajamos el contenido */
   text-align: center;
   height: auto;
 }
 
 .neon-text {
-  font-size: 4rem;
-  font-weight: bold;
-  text-align: center;
-  padding-top: 1rem;
-  font-family: 'Arial Black', sans-serif;
-
-}
-.neon-text {
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
-  padding-top: 1rem;
   font-family: 'Arial Black', sans-serif;
 
-  background: linear-gradient(
-    300deg,
-    #00eaff 0%,
-    #00ff85 25%,
-    #b400ff 60%,
-    #ff4dd2 100%
-  );
-  background-size: 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* Fondo del cuadro */
+  background-color: rgba(140, 90, 190, 0.2); /* lila/violeta translúcido */
+  border: 2px solid rgba(200, 120, 255, 0.5); /* borde suave violeta */
+  border-radius: 15px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 0 10px rgba(180, 120, 255, 0.4);
 
+  /* Texto estilo neon violeta */
+  color: #e0b3ff;
   text-shadow:
-    1px 1px 2px #000,
-    6px 6px 8px #fff,
-    0 0 10px rgba(255,255,255,0.2);
-
-  animation:
-    move-gradient 8s linear infinite,
-    zoom-text 3s ease-in-out infinite;
+    0 0 5px #d580ff,
+    0 0 10px #e0b3ff,
+    0 0 15px #cc66ff;
 }
 
 @keyframes move-gradient {
@@ -152,7 +146,7 @@ footer.footer {
   text-align: center;
   padding: 5px 0;
   backdrop-filter: blur(8px);
-  font-size: 13px;
+  font-size: 18px;
   font-family: Arial, sans-serif;
   z-index: 1000; /* Asegura que el footer quede por encima de otros elementos */
 }

@@ -1,0 +1,59 @@
+<div class="layout-container">
+  <!-- Contenedor del juego -->
+  <div class="juego-container">
+    <a href="/" class="home-icon" title="Inicio">🏠</a>
+
+    <div class="puntaje">Puntaje: {{ puntaje }}</div>
+
+    <!-- Mostrar tiempo restante -->
+    <div class="tiempo-restante">
+      Tiempo restante: {{ tiempoRestante }}s
+    </div>
+
+    <!-- Mostrar pista del color prohibido -->
+    <div class="pista">
+      🔴 No toques el color: <span [style.color]="colorProhibido">{{ colorProhibido }}</span>
+    </div>
+
+    <div class="colores-disponibles">
+      <button
+        *ngFor="let color of coloresDisponibles"
+        [style.backgroundColor]="color"
+        (click)="seleccionarColor(color)"
+        [disabled]="juegoTerminado"
+      >
+        {{ color }}
+      </button>
+    </div>
+
+    <div *ngIf="mensaje" class="mensaje">{{ mensaje }}</div>
+
+    <div class="volver-jugar" *ngIf="juegoTerminado">
+      <button (click)="reiniciarJuego()">Volver a jugar</button>
+    </div>
+  </div>
+
+  <!-- Tablero lateral -->
+  <div class="tablero">
+    <h3>Tablero: </h3>
+    <table>
+      <thead>
+    <tr>
+      <th>Puntaje</th>
+      <th>Ronda</th>
+      <th>Resultado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let partida of partidas">
+      <td>{{ partida.puntaje }}</td>
+      <td>{{ partida.ronda }}</td>
+      <td>
+  <span *ngIf="partida.gano" style="color: #7CFC00;">¡Ganaste! 🎉</span>
+  <span *ngIf="!partida.gano" style="color: #FF6347;">Perdiste 😞</span>
+</td>
+
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,11 +1,37 @@
-<div *ngIf="userData">
+<div class="perfil-container" *ngIf="userData">
+  <div class="perfil-izquierda">
     <h2>{{ userData.name }}</h2>
     <img [src]="userData?.avatar_url" alt="Avatar" width="150" />
+    <p><strong>Usuario:</strong> {{ userData.login }}</p>
+    <p><strong>Bio:</strong> {{ userData.bio || 'sin bio disponible' }}</p>
+    <p><strong>Ubicación:</strong> {{ userData.location || 'locación no encontrada' }}</p>
+  </div>
 
+  <div class="perfil-derecha">
+    <section class="colores-prohibidos">
+      <h2>Hola!</h2>
+      <p>Utilizando tecnologías como Angular, Typescrip, HTML, CSS he desarrollado el juego <strong>Colores Prohibidos</strong>, un juego de reflejos, atención y rapidez.</p>
 
-    <p><strong>Usuario:</strong> {{userData.login}}</p>
-    <p><strong>Bio:</strong> {{userData.bio || 'sin bio disponible'}}</p>
-    <p><strong>Ubicacion:</strong> {{userData.location || 'locacion no encontrada'}}</p>
-                
+      <h3>📌 ¿En qué consiste el juego?</h3>
+      <p>
+        El objetivo es muy simple: en cada nivel se te indicará un color prohibido (por ejemplo: <strong>pink</strong>). 
+        Tu tarea es presionar todos los botones de colores <strong>excepto</strong> el prohibido. 
+        ¡Pero cuidado! Tenés un tiempo límite para completar cada ronda.
+      </p>
 
+      <h3>🎮 Niveles y dificultad</h3>
+      <ul>
+        <li><strong>Nivel 1:</strong> 8 colores - 10 segundos</li>
+        <li><strong>Nivel 2:</strong> 10 colores - 8 segundos</li>
+        <li><strong>Nivel 3:</strong> 12 colores - 7 segundos</li>
+        <li><strong>Nivel 4:</strong> 14 colores - 6 segundos</li>
+      </ul>
+
+      <h3>🏆 ¿Cómo se gana?</h3>
+      <p>
+        Si superás los 4 niveles sin tocar el color prohibido en ninguno, ganás la partida y obtenés <strong>400 puntos</strong>. 
+        ¡Demostrá tu concentración y velocidad!
+      </p>
+    </section>
+  </div>
 </div>
